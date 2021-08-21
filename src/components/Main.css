@@ -1,8 +1,13 @@
 main {
-    background: rgb(33,18,93);
-    background: linear-gradient(180deg, rgba(33,18,93,1) 7%, rgba(18,18,18,1) 100%);
-    
+    background-color: #121212;
 }
 .header-main {
-    height: 332px;
+    padding: 0 32px;
+    background: rgb(33,18,93);
+    background: linear-gradient(180deg, rgba(33,18,93,1) 20%, rgba(18,18,18,1) 76%);
+}
+
+.content {
+    height: 1000px;
+    margin-left: 32px;
 }

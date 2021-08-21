@@ -1,13 +1,26 @@
-import { Avatar, Divider, Fab } from '@material-ui/core'
-import {   AccountBalance, ArrowBackIosOutlined, ArrowDownwardRounded, ArrowForwardIosOutlined } from '@material-ui/icons'
+import { Avatar, Fab, Grid, Paper  } from '@material-ui/core'
+import { ArrowBackIosOutlined, ArrowDownwardRounded, ArrowForwardIosOutlined } from '@material-ui/icons'
+import { makeStyles } from '@material-ui/core/styles';
 import React from 'react'
 import './Main.css'
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }));
+
 function Main() {
+    const classes = useStyles();
     return (
-        <main style={{width: "100%", paddingBottom: "90px", color:"#fff", padding: "0 32px"}}>
-           <header className="header-main">
-                <div style={{height:"57px", display: "flex", justifyContent:"space-between", alignItems:"center"}}>
+        <main style={{width: "100%", height: "auto", color:"#000"}} className={classes.root}>
+           <div className="header-main" >
+                <div style={{paddingTop: 20, display: "flex", justifyContent:"space-between", alignItems:"center"}}>
                     <div style={{display:"flex"}}>
                     <Fab size="small" style={{marginRight: 16, backgroundColor: "#000", color: "#fff", opacity: 0.5}}>
                         <ArrowBackIosOutlined />
@@ -29,21 +42,29 @@ function Main() {
                             aria-label="add"
                             style={{backgroundColor: "#000", color: "#fff"}}
                         >
-                            <Avatar style={{height: 30, width: 30, marginLeft: "-7px", marginRight: 10}} />
+                            <Avatar style={{height: 30, width: 30, marginLeft: "-7px", marginRight: 10}} >NS</Avatar>
                             nsfolk
                             <ArrowDownwardRounded style={{ marginLeft: 10 }}/>
                         </Fab>
                     </div>
                 </div>
                 <section style={{paddingTop: 24,textAlign: "left"}}>
-                    <h1 style={{fontSize: 32}}>สวัสดีตอนเย็น</h1>
+                    <h1 style={{fontSize: 32, color: "#fff"}}>สวัสดีตอนเย็น</h1>
                 </section>
-                <section style={{display: "flex", flexWrap: "wrap"}}>
-                    {[1,2,3,4,5,6,7,8,9,10].map(data => (
-                        <div style={{width: 288, height: 80}}>Card: {data}</div>
+                <Grid container spacing={2} zeroMinWidth>
+                    {[1,2,3,4,5,6,7,8,9,10,11,12].map(data => (
+                        <Grid item lg={2} md={3} sm={6} >
+                            <Paper elevation={3} style={{ height: 80, backgroundColor:"#0f0f0f", borderRadius: 5, color:"#fff", display: "flex"}}>
+                                <img style={{width: 80, marginRight: 20}} src="https://mosaic.scdn.co/640/ab67616d00001e0261ff2c1a9a04a31699c39dadab67616d00001e0269bb779bed4babbc71c9c0ffab67616d00001e02b021018bc51b61b91700c6dcab67616d00001e02fbd3857d7a96cc77ea23be1d" alt="1" />
+                                <p style={{display: "inline", width: 300}}>Playlist #{data}</p>
+                            </Paper>
+                        </Grid>
                     ))}
-                </section>
-           </header>
+                </Grid>
+           </div>
+           <div className="content">
+                asdasdasdasdasdasdasdasdasdasdasdasd
+           </div>
         </main>
     )
 }
