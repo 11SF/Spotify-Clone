@@ -1,0 +1,8 @@
+main {
+    background: rgb(33,18,93);
+    background: linear-gradient(180deg, rgba(33,18,93,1) 7%, rgba(18,18,18,1) 100%);
+    
+}
+.header-main {
+    height: 332px;
+}
